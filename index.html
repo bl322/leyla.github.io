@@ -3,28 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beilei Zhang | AI Security Researcher</title>
+    <title>Beilei Zhang - Personal Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-color: #0a2540; --accent-color: #007bff; --text-color: #334155; --bg-color: #ffffff; }
-        body { font-family: "Times New Roman", "PingFang SC", serif; line-height: 1.8; color: var(--text-color); max-width: 1000px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-color); }
-        nav { margin-bottom: 50px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); z-index: 100; }
-        nav a { text-decoration: none; color: var(--primary-color); margin-right: 25px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--accent-color); }
-        .profile-section { display: flex; gap: 50px; margin-bottom: 60px; align-items: center; }
+        :root {
+            --primary-color: #004080; /* Academic Blue */
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-right: 25px;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+        nav a:hover { color: #007bff; }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 60px;
+            align-items: flex-start;
+        }
         .profile-text { flex: 2; }
         .profile-photo { flex: 1; max-width: 220px; }
-        .profile-photo img { width: 100%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h1 { font-size: 2.8em; margin: 0; color: #0f172a; }
-        .status-badge { background: #f1f5f9; border: 1px solid #cbd5e1; color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.85em; display: inline-block; margin-bottom: 15px; font-weight: 600; }
-        h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; margin-top: 60px; color: #0f172a; font-variant: small-caps; letter-spacing: 1px; }
-        .pub-item { margin-bottom: 25px; }
-        .me { text-decoration: underline; font-weight: bold; color: #000; }
-        .fun-fact-card { background: #f8fafc; border-left: 5px solid var(--primary-color); padding: 25px; border-radius: 8px; margin: 25px 0; }
-        .venue { color: var(--accent-color); font-weight: 600; font-size: 0.9em; }
-        .links a { font-size: 0.85em; margin-right: 10px; color: var(--accent-color); text-decoration: none; }
-        footer { margin-top: 100px; text-align: center; color: #94a3b8; font-size: 0.85em; padding: 20px 0; border-top: 1px solid #e2e8f0; }
-        @media (max-width: 768px) { .profile-section { flex-direction: column-reverse; text-align: center; } .profile-photo { margin: 0 auto 20px; } }
+        .profile-photo img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-size: 2.8em; margin-bottom: 5px; color: #000; }
+        .title-sub { font-size: 1.2em; color: var(--primary-color); font-weight: 600; margin-bottom: 20px; }
+        
+        h2 { 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 8px; 
+            margin-top: 60px; 
+            margin-bottom: 30px;
+            color: #000; 
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        /* Item Styles */
+        .edu-item, .pub-item { margin-bottom: 25px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1em; color: #000; }
+        .item-sub { display: flex; justify-content: space-between; color: #666; font-style: italic; font-size: 0.95em; }
+        
+        .pub-title { font-weight: bold; color: #000; display: block; line-height: 1.4; margin-bottom: 4px; }
+        .authors { font-size: 0.95em; color: #555; }
+        .me { text-decoration: underline; font-weight: bold; }
+        .venue { color: var(--primary-color); font-weight: 600; font-size: 0.9em; margin-right: 10px; }
+        
+        .links { margin-top: 8px; }
+        .links a {
+            font-size: 0.85em;
+            margin-right: 12px;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 2px 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .links a:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+
+        ul.awards-list { padding-left: 20px; }
+        ul.awards-list li { margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .profile-section { flex-direction: column-reverse; text-align: center; }
+            .profile-photo { margin: 0 auto 30px; }
+            .item-header, .item-sub { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -33,83 +107,124 @@
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#publications">Research</a>
-        <a href="#skills">Skills</a>
+        <a href="#awards">Honors</a>
     </nav>
 
     <section id="about" class="profile-section">
         <div class="profile-text">
-            <span class="status-badge">🛡️ LLM Security Guardian</span>
+            <span class="status-badge">🛡 LLM Security Guardian</span>
             <h1>Beilei Zhang (张蓓蕾)</h1>
-            <p><strong>25-year-old Ph.D. student [cite: 3, 7] obsessed with making AI "behave"[cite: 68, 126, 464, 1413].</strong></p>
+            <div class="title-sub">Ph.D. Student in Cyberspace Security | LLM Security Researcher</div>
             <p>
-                I am currently pursuing my doctoral degree in Cyberspace Security at <strong>Information Engineering University</strong>[cite: 7, 10]. My mission is to build robust, endogenous defense layers for Large Language Models using <strong>Causal Inference</strong> and <strong>Reinforcement Learning</strong>[cite: 462, 464, 487, 1413, 1415].
+                I am currently pursuing my Ph.D. degree at <strong>Information Engineering University</strong>. Previously, I obtained my Master's degree with <strong>Distinction</strong> from <strong>The University of Hong Kong (HKU)</strong>.
             </p>
-            <div class="fun-fact-card">
-                <strong>💡 Fun Facts:</strong>
-                <ul>
-                    <li>Former Robotics Instructor @ <strong>TAL (Xueersi)</strong>[cite: 49]. I've found that "teaching models" and "teaching kids" share a surprising amount of common ground[cite: 49, 50].</li>
-                    <li>Led a junior engineer team to win <strong>2nd Runner-up</strong> in the FLL International Robotics Competition (Asia season)[cite: 52].</li>
-                    <li><strong>National Champion</strong> of the Datacon Big Data Security Analysis Competition[cite: 20, 21].</li>
-                </ul>
-            </div>
             <p>
-                <i class="fas fa-envelope"></i> <a href="mailto:feb_bud@outlook.com">feb_bud@outlook.com</a> | 
-                <i class="fab fa-github"></i> <a href="https://github.com/bl322">github.com/bl322</a>
+                My research focuses on the endogenous security of Large Language Models (LLMs). My core research interests include: 
+                <strong>Logical Backdoor Defense</strong>, 
+                <strong>Jailbreak Attack Mitigation</strong>, 
+                <strong>Automated Code Auditing</strong>, and <strong>Password Modeling via Mixture-of-Experts (MoE)</strong>.
+            </p>
+            <p style="margin-top: 25px;">
+                <i class="fas fa-envelope"></i> <a href="mailto:feb_bud@outlook.com">feb_bud@outlook.com</a><br>
+                <i class="fab fa-github"></i> <a href="https://github.com/bl322">github.com/bl322</a><br>
+                <i class="fas fa-location-dot"></i> Zhengzhou / Hong Kong
             </p>
         </div>
         <div class="profile-photo">
-            <img src="me.jpg" alt="Beilei Zhang" onerror="this.src='https://via.placeholder.com/220x280?text=Beilei+Zhang'">
+            <img src="me.jpg" alt="Beilei Zhang" onerror="this.src='https://via.placeholder.com/220x280?text=Profile+Photo'">
         </div>
     </section>
 
     <section id="education">
-        <h2>Learning Path Education</h2>
-        <p>I believe in the continuous pursuit of excellence, from graduating <strong>Rank 1st</strong> in my class to maintaining a <strong>95+ GPA</strong> in my doctoral studies[cite: 7, 9, 12, 15].</p>
-        <ul>
-            <li><strong>Ph.D. in Cyberspace Security</strong> | Information Engineering University | 2024 - Present [cite: 7, 10]
-                <br><small>GPA: 95.51/100</small>
-            </li>
-            <li><strong>M.Sc. in ITE (Distinction)</strong> | The University of Hong Kong (HKU) | 2022 - 2023 [cite: 8, 11, 15]
-                <br><small>CGPA: 3.84/4.3 | Dean's List Award [cite: 15]</small>
-            </li>
-            <li><strong>B.Eng. in Data Science (Rank 1st)</strong> | ZZULI | 2018 - 2022 [cite: 9, 12, 15]
-                <br><small>National Scholarship (Twice) [cite: 13, 14] | Outstanding Graduate of Henan Province [cite: 15]</small>
-            </li>
-        </ul>
+        <h2>Education</h2>
+        
+        <div class="edu-item">
+            <div class="item-header">
+                <span>Information Engineering University</span>
+                <span>Sept. 2024 - Present</span>
+            </div>
+            <div class="item-sub">
+                <span>Ph.D. in Cyberspace Security</span>
+                <span>GPA: 95.51/100</span>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="item-header">
+                <span>The University of Hong Kong (HKU)</span>
+                <span>Sept. 2022 - Nov. 2023</span>
+            </div>
+            <div class="item-sub">
+                <span>M.Sc. in Information Technology in Education</span>
+                <span>CGPA: 3.84/4.3 (First Class Honours/Distinction)</span>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="item-header">
+                <span>Zhengzhou Light Industry University (ZZULI)</span>
+                <span>Sept. 2018 - June 2022</span>
+            </div>
+            <div class="item-sub">
+                <span>B.Eng. in Data Science and Big Data Technology</span>
+                <span>GPA: 92.59/100 (Ranked 1st in Major)</span>
+            </div>
+        </div>
     </section>
 
     <section id="publications">
-        <h2>Research Publications</h2>
-        <p>My research focuses on neutralizing logical backdoors and jailbreak attempts through dynamic defenses[cite: 68, 305, 462, 1413].</p>
-        
+        <h2>Selected Publications</h2>
+
         <div class="pub-item">
-            <strong>DynGuard & Causal-Guard</strong> [cite: 982, 1407]<br>
-            Neutralizing entangled logical backdoors and purifying implicit poisoning via Causal Models[cite: 983, 1408].
-            <br><span class="venue">ICIC 2026 / KSEM 2026</span>
+            <span class="pub-title">DynGuard: Dynamic Runtime Isolation for Entangled Logical Backdoors in LLMs</span>
+            <div class="authors"><span class="me">Beilei Zhang</span>, Tao Hu, Yuke Ma, Qi Ouyang, Baolin Li, Chenyang Shao, Hailong Ma</div>
+            <div class="venue">ICIC 2026</div>
+            <div class="links"><a href="#">Paper (In Press)</a></div>
         </div>
+
         <div class="pub-item">
-            <strong>RL-Shield & RPDP-Guard</strong> [cite: 448, 58]<br>
-            Building real-time automated "sense-decision-response" loops for jailbreak defense using RL[cite: 74, 464, 487].
-            <br><span class="venue">CSCWD 2026 / CollaborateCom 2025</span>
+            <span class="pub-title">RL-Shield: Endogenous Moving Target Defense against Jailbreak Attacks in LLMs</span>
+            <div class="authors"><span class="me">Beilei Zhang</span>, Tao Hu, Weizhen He, Baolin Li, Qi Ouyang, Hailong Ma</div>
+            <div class="venue">CSCWD 2026</div>
+            <div class="links"><a href="https://github.com/bl322/rl-shield">Code</a></div>
         </div>
+
         <div class="pub-item">
-            <strong>PassMoE-P</strong> [cite: 760]<br>
-            A pattern-specialized Mixture-of-Experts framework that doubles the efficiency of password security auditing[cite: 768, 771].
-            <br><span class="venue">ICASSP 2026</span>
+            <span class="pub-title">Causal-Guard: Disentangling and Purifying Logical Camouflage in Textual Backdoor Attacks via Structural Causal Models</span>
+            <div class="authors"><span class="me">Beilei Zhang</span>, Qi Ouyang, Tao Hu, Baolin Li, Yuke Ma, Shuai Zhang, Hailong Ma</div>
+            <div class="venue">KSEM 2026</div>
+            <div class="links"><a href="#">PDF</a></div>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">PassMoE-P: Enhancing Password Guessing Using Large Language Models with Pattern-Specialized Mixture-of-Experts</span>
+            <div class="authors"><span class="me">Beilei Zhang</span>, Yuke Ma, Tao Hu, Yanzhao Gao, et al.</div>
+            <div class="venue">ICASSP 2026</div>
+            <div class="links"><a href="https://github.com/MayukeM/PassMoE">Code</a></div>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">RPDP-Guard: Defending Large Language Models Against Jailbreaking Attacks Through Risk Perception and Dynamic Prompting</span>
+            <div class="authors"><span class="me">Beilei Zhang</span>, Hao Wang, Tao Hu, Rongkui Zhou, Ming Tan, Weitao Han, Hailong Ma</div>
+            <div class="venue">CollaborateCom 2025</div>
+            <div class="links"><a href="https://github.com/fienxs/RPDP-Guard">Code</a></div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills & Tools</h2>
-        <ul>
-            <li><strong>Tech Stack</strong>: Python (Deep Learning), SQL, Java, C, R[cite: 54].</li>
-            <li><strong>Analysis & Design</strong>: Tableau, SPSS, Axure RP, Visio Studio[cite: 55, 56].</li>
-            <li><strong>Project Management</strong>: Experienced in agile iteration and risk assessment systems at Hong Kong Evergrande Information[cite: 45, 47].</li>
+    <section id="awards">
+        <h2>Honors & Awards</h2>
+        <ul class="awards-list">
+            <li><strong>National Champion, Datacon Big Data Security Analysis Competition</strong> (2025)</li>
+            <li><strong>National Scholarship</strong> (2019-2020 & 2020-2021)</li>
+            <li><strong>Dean's List, The University of Hong Kong</strong> (2023)</li>
+            <li><strong>First Prize, National English Competition for College Students (NECCS)</strong> (2021)</li>
+            <li><strong>Outstanding Graduate of Henan Province</strong> (2022)</li>
+            <li><strong>University First-class Scholarship</strong> (2018-2022, 2023-2025)</li>
         </ul>
     </section>
 
-    <footer>
-        &copy; 2026 Beilei Zhang. Driven by curiosity and fueled by coffee. [cite: 57]
+    <footer style="margin-top: 100px; padding: 20px 0; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 0.9em;">
+        &copy; 2026 Beilei Zhang. Last updated: May 2026.
     </footer>
 
 </body>
