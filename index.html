@@ -2,20 +2,130 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的个人简历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyla | 个人主页</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 800px; padding: 0 20px; color: #333; }
-        h1 { color: #0056b3; }
+        /* 基础样式 */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        /* 导航栏 */
+        nav {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        nav a:hover { text-decoration: underline; }
+
+        /* 标题部分 */
+        h1 { font-size: 2.2em; margin-bottom: 10px; }
+        h2 { 
+            border-bottom: 2px solid #333; 
+            padding-bottom: 5px; 
+            margin-top: 50px;
+            font-size: 1.5em;
+        }
+
+        /* 发表文章/项目样式 */
+        .pub-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .pub-img {
+            width: 200px;
+            height: auto;
+            margin-right: 25px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .pub-info { flex: 1; }
+        .pub-title { font-weight: bold; color: #000; display: block; margin-bottom: 5px; }
+        .authors { font-size: 0.95em; color: #555; }
+        .me { font-weight: bold; text-decoration: underline; } /* 强调你自己 */
+        .venue { font-style: italic; color: #666; margin: 5px 0; }
+        
+        /* 链接按钮 */
+        .links a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 2px 8px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .links a:hover { background: #007bff; color: #fff; }
+
+        @media (max-width: 600px) {
+            .pub-item { flex-direction: column; }
+            .pub-img { width: 100%; margin-bottom: 15px; }
+        }
     </style>
 </head>
 <body>
-    <h1>你好，我是 Leyla！</h1>
-    <p>欢迎来到我的个人在线简历。这里目前还在建设中...</p>
-    <h2>工作经验</h2>
-    <ul>
-        <li>前端开发工程师 (2023 - 至今)</li>
-    </ul>
-    <h2>专业技能</h2>
-    <p>HTML, CSS, JavaScript, Git</p>
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="#research">研究成果</a>
+        <a href="#">简历 (CV)</a>
+        <a href="#">联系方式</a>
+    </nav>
+
+    <section>
+        <h1>Leyla (你的中文名)</h1>
+        <p>
+            我是 [你的大学/单位] 的一名 [你的身份，如：博士生/开发者]。
+            我的研究兴趣包括 [兴趣A]、[兴趣B] 和 [兴趣C]。
+        </p>
+        <p>邮箱: leyla@example.com</p>
+    </section>
+
+    <h2 id="research">发表论文 (Selected Publications)</h2>
+
+    <div class="pub-item">
+        <img src="https://via.placeholder.com/200x120" alt="项目预览" class="pub-img">
+        <div class="pub-info">
+            <span class="pub-title">这是你的第一篇论文或项目标题</span>
+            <div class="authors">
+                <strong>Leyla</strong>, 合作者 A, 合作者 B
+            </div>
+            <div class="venue">CVPR 2024 (或其他会议/期刊名称)</div>
+            <div class="links">
+                <a href="#">[PDF]</a>
+                <a href="#">[Code]</a>
+                <a href="#">[Project Page]</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <img src="https://via.placeholder.com/200x120" alt="项目预览" class="pub-img">
+        <div class="pub-info">
+            <span class="pub-title">另一个很棒的研究成果标题</span>
+            <div class="authors">
+                合作者 C, <span class="me">Leyla</span>, 合作者 D
+            </div>
+            <div class="venue">Arxiv 2023</div>
+            <div class="links">
+                <a href="#">[Arxiv]</a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
