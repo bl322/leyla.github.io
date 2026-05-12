@@ -3,129 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leyla | 个人主页</title>
+    <title>张蓓蕾 (Beilei Zhang) - 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 基础样式 */
+        :root {
+            --primary-color: #004080; /* 学术蓝 */
+            --text-color: #333;
+            --light-grey: #f9f9f9;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: "Times New Roman", Times, serif, "PingFang SC", "Microsoft YaHei";
+            line-height: 1.7;
+            color: var(--text-color);
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
             background-color: #fff;
         }
 
-        /* 导航栏 */
+        /* 顶部导航 */
         nav {
+            margin-bottom: 50px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+            padding-bottom: 15px;
         }
         nav a {
             text-decoration: none;
-            color: #007bff;
-            margin-right: 20px;
-            font-weight: bold;
-        }
-        nav a:hover { text-decoration: underline; }
-
-        /* 标题部分 */
-        h1 { font-size: 2.2em; margin-bottom: 10px; }
-        h2 { 
-            border-bottom: 2px solid #333; 
-            padding-bottom: 5px; 
-            margin-top: 50px;
-            font-size: 1.5em;
-        }
-
-        /* 发表文章/项目样式 */
-        .pub-item {
-            display: flex;
-            margin-bottom: 30px;
-            align-items: flex-start;
-        }
-        .pub-img {
-            width: 200px;
-            height: auto;
+            color: var(--primary-color);
             margin-right: 25px;
-            border: 1px solid #eee;
-            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1em;
         }
-        .pub-info { flex: 1; }
-        .pub-title { font-weight: bold; color: #000; display: block; margin-bottom: 5px; }
-        .authors { font-size: 0.95em; color: #555; }
-        .me { font-weight: bold; text-decoration: underline; } /* 强调你自己 */
-        .venue { font-style: italic; color: #666; margin: 5px 0; }
-        
-        /* 链接按钮 */
-        .links a {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 2px 8px;
-            border: 1px solid #007bff;
-            border-radius: 4px;
-            color: #007bff;
-            text-decoration: none;
-            font-size: 0.85em;
-        }
-        .links a:hover { background: #007bff; color: #fff; }
+        nav a:hover { color: #007bff; text-decoration: underline; }
 
-        @media (max-width: 600px) {
-            .pub-item { flex-direction: column; }
-            .pub-img { width: 100%; margin-bottom: 15px; }
+        /* 个人简介区域 */
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: center;
+        }
+        .profile-text { flex: 2; }
+        .profile-photo {
+            flex: 1;
+            max-width: 220px;
+        }
+        .profile-photo img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-size: 2.5em; margin-bottom: 10px; color: #000; }
+        h2 { 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 5px; 
+            margin-top: 60px; 
+            font-variant: small-caps;
+            color: #000;
+        }
+
+        /* 列表样式 */
+        .item { margin-bottom: 25px; }
+        .item-title { font-weight: bold; font-size: 1.1em; display: block; }
+        .item-meta { color: #666; font-style: italic; }
+        .authors { color: #555; }
+        .me { font-weight: bold; text-decoration: underline; }
+
+        /* 链接按钮 */
+        .links { margin-top: 5px; }
+        .links a {
+            font-size: 0.9em;
+            margin-right: 12px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .links a::before { content: "["; color: #ccc; }
+        .links a::after { content: "]"; color: #ccc; }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .profile-container { flex-direction: column-reverse; text-align: center; }
+            nav { text-align: center; }
+            nav a { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#education">教育背景</a>
         <a href="#research">研究成果</a>
-        <a href="#">简历 (CV)</a>
-        <a href="#">联系方式</a>
+        <a href="#awards">荣誉奖励</a>
     </nav>
 
-    <section>
-        <h1>Leyla (你的中文名)</h1>
-        <p>
-            我是 [你的大学/单位] 的一名 [你的身份，如：博士生/开发者]。
-            我的研究兴趣包括 [兴趣A]、[兴趣B] 和 [兴趣C]。
-        </p>
-        <p>邮箱: leyla@example.com</p>
+    <section id="about" class="profile-container">
+        <div class="profile-text">
+            <h1>张蓓蕾 (Beilei Zhang)</h1>
+            <p>工学博士 | 网络空间安全</p>
+            <p>目前在 <strong>信息工程大学</strong> 攻读博士学位。我的研究方向主要集中在大语言模型（LLM）的安全防御、代码审计以及专家混合架构（MoE）的应用。此前，我于香港大学（HKU）获得硕士学位。</p>
+            <p>
+                <i class="fas fa-envelope"></i> <a href="mailto:feb_bud@outlook.com">feb_bud@outlook.com</a><br>
+                <i class="fab fa-github"></i> <a href="https://github.com/bl322">GitHub Profile</a>
+            </p>
+        </div>
+        <div class="profile-photo">
+            <img src="https://via.placeholder.com/220x280" alt="Beilei Zhang">
+        </div>
     </section>
 
-    <h2 id="research">发表论文 (Selected Publications)</h2>
+    <section id="education">
+        <h2>教育背景 Education</h2>
+        <div class="item">
+            <span class="item-title">信息工程大学</span>
+            <span class="item-meta">工学博士, 网络空间安全 | 2024.09 - 至今</span>
+        </div>
+        <div class="item">
+            <span class="item-title">香港大学 (The University of Hong Kong)</span>
+            <span class="item-meta">理学硕士, 教育应用资讯科技 | 2022.09 - 2023.11</span>
+            <p>获得一等荣誉 (Distinction), Dean's List.</p>
+        </div>
+    </section>
 
-    <div class="pub-item">
-        <img src="https://via.placeholder.com/200x120" alt="项目预览" class="pub-img">
-        <div class="pub-info">
-            <span class="pub-title">这是你的第一篇论文或项目标题</span>
-            <div class="authors">
-                <strong>Leyla</strong>, 合作者 A, 合作者 B
-            </div>
-            <div class="venue">CVPR 2024 (或其他会议/期刊名称)</div>
+    <section id="research">
+        <h2>研究成果 Research</h2>
+        
+        <div class="item">
+            <span class="item-title">PassMoE-P: Password Guessing via Mixture-of-Experts Architecture</span>
+            <span class="authors"><span class="me">Beilei Zhang</span>, et al.</span>
+            <div class="item-meta">Accepted at ICASSP 2026</div>
             <div class="links">
-                <a href="#">[PDF]</a>
-                <a href="#">[Code]</a>
-                <a href="#">[Project Page]</a>
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
             </div>
         </div>
-    </div>
 
-    <div class="pub-item">
-        <img src="https://via.placeholder.com/200x120" alt="项目预览" class="pub-img">
-        <div class="pub-info">
-            <span class="pub-title">另一个很棒的研究成果标题</span>
-            <div class="authors">
-                合作者 C, <span class="me">Leyla</span>, 合作者 D
-            </div>
-            <div class="venue">Arxiv 2023</div>
+        <div class="item">
+            <span class="item-title">RPDP-Guard: Risk-aware Prompt Defense for LLMs</span>
+            <span class="authors">Co-author, <span class="me">Beilei Zhang</span>, et al.</span>
+            <div class="item-meta">CollabCom 2025</div>
             <div class="links">
-                <a href="#">[Arxiv]</a>
+                <a href="#">Paper</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="awards">
+        <h2>荣誉奖励 Honors</h2>
+        <ul>
+            <li>Datacon 大数据安全分析竞赛 全国冠军 (2025)</li>
+            <li>国家奖学金 (2020, 2021)</li>
+            <li>香港大学院长荣誉名单 (Dean's List)</li>
+            <li>全国大学生英语竞赛 一等奖</li>
+        </ul>
+    </section>
+
+    <footer style="margin-top: 100px; font-size: 0.8em; color: #999; text-align: center;">
+        &copy; 2026 Beilei Zhang. Last updated: May 2026.
+    </footer>
 
 </body>
 </html>
